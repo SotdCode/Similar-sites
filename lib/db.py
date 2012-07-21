@@ -4,7 +4,7 @@
 import sqlite3
 import os
 
-class Db:
+class Db(object):
     def __init__(self, url=None):
         self.dbfile = os.getcwd() + "/lib/database/similar.db"
         self.conn = sqlite3.connect(self.dbfile)
