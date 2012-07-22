@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*
+
 """Similar.py - Find websites similar to site given and build a database containing the data
     by Sotd - twitter.com/#!/Sotd_ """
+    
 import sys
 from lib.parse import results
 from lib.db import Db
