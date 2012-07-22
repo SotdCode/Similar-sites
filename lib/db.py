@@ -47,4 +47,3 @@ class Db(object):
             print "Error reading tables"
         else:
             return result
-
