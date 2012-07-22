@@ -5,6 +5,7 @@ import json
 import urllib2
 
 def results(url):
+    """Connect, parse results and return similar sites"""
     similar_sites = []
     try:
         site = json.load(urllib2.urlopen('http://www.similarsitesearch.com/api/similar/%s' % (url)))

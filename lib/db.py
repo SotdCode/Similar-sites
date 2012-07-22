@@ -5,6 +5,7 @@ import sqlite3
 import os
 
 class Db(object):
+    """Interact with the sqlite database"""
     def __init__(self, url=None):
         self.dbfile = os.getcwd() + "/lib/database/similar.db"
         self.conn = sqlite3.connect(self.dbfile)
@@ -16,6 +17,7 @@ class Db(object):
         self.conn.commit()
 
     def add(self, sites, site):
+        """Add similar sites to the relevant table"""
         name = site.replace('.', '')
         for site in sites:
             try:
@@ -26,6 +28,7 @@ class Db(object):
                 self.conn.commit()
     
     def read_data(self, site):
+        """Read stored data in relevant table"""
         target = site.replace('.', '')
         try:
             self.curs.execute("SELECT * FROM " + target)
@@ -36,6 +39,7 @@ class Db(object):
             return result
 
     def read_tables(self):
+        """Read tables from database"""
         try:
             self.curs.execute("SELECT * FROM sqlite_master")
             result = [element[1] for element in self.curs.fetchall()]
